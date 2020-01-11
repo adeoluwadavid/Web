@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo App</title>
+</head>
+<body>
+    <h1>Please Enter Your Important Note</h1>
+
+    <input type="text">
+    <ul>
+
+    </ul>
+
+    <button>Delete</button>
+    
+</body>
+<script>
+    const input = document.querySelector('input')
+    const ul = document.querySelector('ul')
+    const dlete = document.querySelector('button')
+    
+    let li;
+
+    function todo(){
+        let enteredAction = input.value
+        li = document.createElement('li')
+        if(enteredAction !== ''){
+            ul.appendChild(li)
+            li.textContent = enteredAction
+        } 
+    }
+    input.addEventListener('change', todo)
+
+    dlete.addEventListener('click', function(){
+            for(let i = 0; i < ul.length; i++){
+                ul[i].removeChild(li)
+            }
+            
+        
+    })
+    
+</script>
+</html>
